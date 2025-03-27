@@ -18,7 +18,7 @@ export async function obtenerSuperheroesMayoresDe30() {
 
 
 
-// SPRINT 3 TP 1 //
+// SPRINT 3 TRABAJO PRACTICO 1 INICIO //
 //  CREAR NUEVO //
 export async function crearNuevoSuperheroe(datosNuevoSuperheroe){
     console.log("Datos recibidos para insertar:", datosNuevoSuperheroe);
@@ -39,3 +39,9 @@ export async function eliminarSuperheroePorId(id){
 export async function eliminarSuperheroePorNombre(nombre){
     return await superHeroRepository.eliminarPorNombre(nombre);
 }
+
+// SPRINT 3 TRABAJO PRACTICO 1 FINAL //
+
+// SPRINT 3 TRABAJO PRACTICO 2 INICIO //
+
+
