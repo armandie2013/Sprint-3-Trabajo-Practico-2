@@ -22,7 +22,8 @@ export const validationDataSuperHeros = () => [
     .isInt({ min: 0 })
     .withMessage("La edad es incorrecta"),
 
-  body("poderes")
+  /*body("poderes")
+  .trim()
     .notEmpty()
     .withMessage("La lista de poderes no puede estar vacia")
     .isArray({ min: 1 })
@@ -33,5 +34,27 @@ export const validationDataSuperHeros = () => [
     .withMessage("Cada poder debe ser una cadena de texto")
     .isLength({ min: 3, max: 60 })
     .withMessage("Cada poder debe tener entre 3 y 60 caracteres")
-    .trim(),
+    .trim(),*/
+
+  body("poderes")
+    .trim()
+    .notEmpty()
+    .withMessage("La lista de poderes no puede estar vacía")
+    .isArray({ min: 1 })
+    .withMessage("Poderes no es un array o está vacío")
+    .custom((value) => {
+      if (
+        value.some(
+          (poder) =>
+            typeof poder !== "string" ||
+            poder.trim().length < 3 ||
+            poder.trim().length > 60
+        )
+      ) {
+        throw new Error(
+          "Cada poder debe ser un string entre 3 y 60 caracteres"
+        );
+      }
+      return true;
+    }),
 ];
