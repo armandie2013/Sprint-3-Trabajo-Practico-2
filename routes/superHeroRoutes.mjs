@@ -15,7 +15,7 @@ import { handleValidationErrors } from "../middlewares/errorMiddleware.mjs";
 
 const router = express.Router();
 // ------------------------------------------------------------------------------------------------ //
-// HABILITAR PARA QUE FUNSIONE //
+// HABILITAR PARA QUE FUNCIONE //
 // ENDPOINT SPRINT 2 FINAL //
 
 // router.get("/heroes", obtenerTodosLosSuperheroesController);
@@ -28,7 +28,7 @@ const router = express.Router();
 
 
 // ------------------------------------------------------------------------------------------------ //
-// HABILITAR PARA QUE FUNSIONE //
+// HABILITAR PARA QUE FUNCIONE //
 // ENDPOINT SPRINT 3 TRABAJO PRACTICO 1 INICIO //
 
 // router.get("/heroes", obtenerTodosLosSuperheroesController);
@@ -42,7 +42,7 @@ const router = express.Router();
 
 
 // ------------------------------------------------------------------------------------------------ //
-// HABILITAR PARA QUE FUNSIONE //
+// HABILITAR PARA QUE FUNCIONE //
 // ENDPOINT SPRINT 3 TRABAJO PRACTICO 2 INICIO //
 
 router.post("/heroes/crear", validationDataSuperHeros(), handleValidationErrors, crearNuevoSuperheroeController);
