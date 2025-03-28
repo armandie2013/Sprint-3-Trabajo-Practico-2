@@ -15,12 +15,24 @@ export const validationDataSuperHeros = () => [
     .isLength({ min: 3, max: 60 })
     .withMessage("El nombre real debe tener entre 3 y 60 caracteres"),
 
+  /*body("edad")
+    .trim()
+    .notEmpty()
+    .withMessage("La edad es requerida y no puede estar vacia")
+    .isNumeric()
+    .isInt({ min: 0 })
+    .withMessage("La edad es incorrecta"),*/
+
   body("edad")
     .trim()
     .notEmpty()
     .withMessage("La edad es requerida y no puede estar vacia")
-    .isInt({ min: 0 })
-    .withMessage("La edad es incorrecta"),
+    .custom ((value) => {
+      if (!isNaN(Number(value))) {
+        throw new Error("La edad debe ser un número");
+    }
+    }),
+    
 
   /*body("poderes")
   .trim()
